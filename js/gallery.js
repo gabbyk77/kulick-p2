@@ -44,7 +44,7 @@ function swapPhoto() {
 var mCurrentIndex = 0;
 
 // XMLHttpRequest variable
-//part 2
+//part 2: sections 1. and 2.
 var mRequest = new XMLHttpRequest();
 //from ajax-and-json codesandbox
 mRequest.addEventListener("readystatechange", () => {
@@ -62,6 +62,7 @@ mRequest.send();
 //end of code from codesandbox
 
 // Array holding GalleryImage objects (see below).
+//part 2: section 3.
 var mImages = [];
 
 // Holds the retrived JSON information
