@@ -44,7 +44,22 @@ function swapPhoto() {
 var mCurrentIndex = 0;
 
 // XMLHttpRequest variable
+//part 2
 var mRequest = new XMLHttpRequest();
+//from ajax-and-json codesandbox
+mRequest.addEventListener("readystatechange", () => {
+  //console.log(request, request.readyState);
+  if (mRequest.readyState === 4 && mRequest.status === 200) {
+    const data = JSON.parse(request.responseText);
+    console.log(data);
+  } else if (mRequest.readyState === 4) {
+    console.log("could not fetch the data");
+  }
+});
+
+mRequest.open("GET", "../images.json");
+mRequest.send();
+//end of code from codesandbox
 
 // Array holding GalleryImage objects (see below).
 var mImages = [];
@@ -80,6 +95,11 @@ window.addEventListener('load', function() {
 }, false);
 
 function GalleryImage() {
+	//part 1
+  	this.location;
+  	this.description;
+ 	this.date;
+  	this.img;
 	//implement me as an object to hold the following data about an image:
 	//1. location where photo was taken
 	//2. description of photo
